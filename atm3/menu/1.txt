@@ -1,0 +1,32 @@
+DatabaseUtils utils;
+		try {
+			
+			utils = new DatabaseUtils();
+			
+			List<User> list = utils.queryData(User.class, "SELECT * FROM user_ where account = ?",user.getAccount());
+			
+			System.out.println(list);
+			
+			System.out.println("1:·µ»ØÖ÷²Ëµ¥");
+
+			String num1 = scanner.nextLine();
+
+			if ("1".equals(num1)) {
+
+				return new MainMenu();
+
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ReflectiveOperationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
